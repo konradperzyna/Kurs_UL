@@ -6,10 +6,13 @@
 	}
 
 	mapArray = function (array, callback, ctx) {
-        var newArr = [];
-        
-        // add code for maping
-        
+            var newArr = [];
+            // add code for maping
+            callback = callback.bind(ctx)
+            var i;
+            for (i = 0; i < array.length; ++i) {        
+                newArr[i] = callback(array[i], i, array);	
+        }
         return newArr;
 	};
 

@@ -23,23 +23,63 @@
     //////////////////////////////////////////////////////////////////////////////////////
 
     global.UAM.addAircraft = function (newAircraftCode) {
+        var aircraft = {
+            code: newAircraftCode,
+            services: []
+        }
+        global.UAM.aircrafts.push(aircraft);
+        return aircraft;
         // function should return new aircraft object
     };
 
     global.UAM.removeAircraft = function (aircraftObj) {
-        // !!!
+        var i = global.UAM.aircrafts.indexOf(aircraftObj);
+        if(i != -1) {
+            global.UAM.aircrafts.splice(i, 1);
+        }	
+	   //global.UAM.aircrafts.pop(aircraftObj); 
+	       
     };
 
-    global.UAM.addWorkToAircraft = function(aircraftObj, name, timeToExxecute) {
-        // !!!
+    global.UAM.addWorkToAircraft = function(aircraftObj, name, timeToExecute) {
+        var i = global.UAM.aircrafts.indexOf(aircraftObj);
+        if(i != -1) {	
+            global.UAM.aircrafts[i].services.push({
+                name: name,
+                timeToExecute: timeToExecute
+            });	
+        }
     };
         
-    global.UAM.reduceTimeToExecute = function(time) {
-        // !!!
+    global.UAM.reduceTimeToExecute = function(aircraftObj, time) {
+        var i = global.UAM.aircrafts.indexOf(aircraftObj);
+        if(i != -1) {	
+            if(global.UAM.aircrafts[i].services instanceof Array) {
+                global.UAM.aircrafts[i].services.forEach(function(entry) {
+                    if(typeof entry.timeToExecute == "number") 					{				
+                        entry.timeToExecute -= time;		
+                    }
+                });
+            }
+        }
     };
     
     global.UAM.getAircraftsForRepairs = function(maxTimeToExecute) {
-        // !!!
+        var aircraftsForRepairs = []
+        var i;
+        global.UAM.aircrafts.forEach(function(aircraft) {
+
+            if(aircraft.services instanceof Array) {
+                for(i = 0; i < aircraft.services.length; ++i) {
+                    if(typeof aircraft.services[i] != "undefined" && typeof aircraft.services[i].timeToExecute == "number" && aircraft.services[i].timeToExecute <= maxTimeToExecute) 					{				
+                        aircraftsForRepairs.push(aircraft);	
+                        break;
+                    }
+                }
+
+            }				
+        });
+        return aircraftsForRepairs;
     };
 
 }(window));

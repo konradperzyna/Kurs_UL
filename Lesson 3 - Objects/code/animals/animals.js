@@ -1,6 +1,28 @@
 (function (global) {
 	var Cat = null, Bird = null, Worm = null;
 
+    var Animal = {
+        food : [],
+        eat : function(victim) {
+            if (this.food.some(function(animal) { return animal === Object.getPrototypeOf(victim)})) {
+                return "Mniam!";
+            } else {
+                return "Blee!";
+            }
+        }
+    }
+
+    Worm = Object.create(Animal);
+    
+    Bird = Object.create(Animal);
+    Bird.food = [Worm];
+    
+    Cat = Object.create(Animal);
+    Cat.food = [Bird];
+
+
+
+
 	if (!global.UAM) {
 		global.UAM = {};
 	}

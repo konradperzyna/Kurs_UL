@@ -1,0 +1,6 @@
+git remote -v     #lista remote repository
+git remote add upstream https://github.com/leszczynski-it/kurs_UL  #dodanie remote repository
+git pull upstream summer2016_ul            #pull z remote repository
+
+git log --name-status -2  #ostatnie 2 wpisy, tylko informacja o zmienionych plikach
+git log -p -2             #ostatnie 2 wpisy, diff

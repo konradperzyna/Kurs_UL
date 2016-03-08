@@ -1,8 +1,9 @@
-(function() {
+window.addEventListener('DOMContentLoaded',
+function() {
 
     //Create area and ship as `div` in `document` node
-    var playArea = {}, // ??
-        ship = {}; // ??
+    var playArea = document.createElement('div');
+    var ship = document.createElement('div');
 
     var key = {
         right: false,
@@ -21,13 +22,13 @@
 
     // Add player area and ship element at the end of `document.body` element
 
-    // ??
-    // ??
+    document.body.appendChild(playArea);
+    document.body.appendChild(ship);
+    
+    // Add CSS classes accordingly ( ship -> ship, playArea -> playArea)
 
-    // Add CSS classes accordingly ( player -> player, playArea -> playArea)
-
-    // ??
-    // ??
+    playArea.classList.add('playArea');
+    ship.classList.add('ship');
 
     //move mechanics
     shipPos.x = (playArea.offsetWidth / 2 + playArea.offsetLeft) - (ship.offsetWidth / 2);
@@ -110,7 +111,7 @@
 
     loop();
 
-})();
+});
 
 // Resources
 // https://developer.mozilla.org/pl/docs/Web/API/Document/createElement

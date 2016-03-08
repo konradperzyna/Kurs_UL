@@ -3,16 +3,22 @@ window.addEventListener('DOMContentLoaded', function () {
     var submitButton = document.getElementById('submit');
     var evenTextField = document.getElementById('evennumber');
     var oddTextField = document.getElementById('oddnumber');
-    
-    var num;
-    
+
     submitButton.addEventListener('click', function() {
-        num = Number(evenTextField.textContent);    
-        if (num%2 != 1) { 
-            evenTextField.classList.add('invalid');
-        } else {
-            evenTextField.classList.add('valid');
-        }
+        validateText(oddTextField, 1);
+        validateText(evenTextField, 0);
     }, false);
 
 });
+
+
+function validateText(textField, modulus) {
+    var num = +textField.value;
+    if (num%2 === modulus) { 
+        textField.classList.remove('invalid');
+        textField.classList.add('valid');
+    } else {
+        textField.classList.remove('valid');
+        textField.classList.add('invalid');
+    }
+}

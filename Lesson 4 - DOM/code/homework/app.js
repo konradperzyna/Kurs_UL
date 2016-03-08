@@ -100,8 +100,8 @@ function() {
     // add event listeners observers for both `keydown` and `keyup` events
     // using 'keydown' and 'keyup' functions provided above
 
-    // ??
-    // ??
+    window.addEventListener('keydown', keyDown, false);
+    window.addEventListener('keyup', keyUp, false);
 
     // Main game loop
     function loop() {

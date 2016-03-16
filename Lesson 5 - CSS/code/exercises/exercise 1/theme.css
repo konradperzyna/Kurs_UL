@@ -1,3 +1,86 @@
+body {
+   font-family: 'Times New Roman', Times, serif;
+}
+
 .row {
     display: block;
+    overflow : auto;
 }
+
+.row:last-child h1 {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.row:last-child p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 5%;
+}
+
+.row:last-child p:before {
+    content: "";
+    background: url("cat.jpg") no-repeat; 
+    display: inline-block;
+    vertical-align:text-bottom;
+    background-size: 60px 60px;
+    padding: 60px 60px 0 0 ;    
+    
+}
+
+.column {
+    display : block;
+    float : left;
+    width : 45%;
+    margin : 0 2%;
+}
+
+
+
+.column * {
+    display : block;
+    margin : 0;
+    padding : 20pt;
+    color : white;
+}
+
+
+.column:first-child h1 {
+    background-color: black;
+    border-radius: 20pt 20pt 0 0;
+}
+
+.column:first-child p {
+    color : black;
+    background-color: lightgrey;
+    border-radius: 0 0 20pt 20pt;
+}
+
+.column:first-child p:first-letter {
+    font-size : 300%;
+}
+
+
+.column:last-child {
+    clear: right;
+    border-color: black;
+    border-width: medium;
+    border-style: solid;
+    box-shadow: 10px 10px 5px 2px grey;
+}
+
+.column:last-child h1 {
+    font-style : italic;
+    background-color:  orange;
+}
+
+.column:last-child p {
+    background-color:  green;
+}
+
+.column:last-child p:first-line {
+    font-weight : bold;
+    text-shadow : -4px 4px 4px lightcyan;
+}
+

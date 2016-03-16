@@ -1,9 +1,8 @@
-window.addEventListener('DOMContentLoaded',
-function() {
+window.addEventListener('DOMContentLoaded', function () {
 
     //Create area and ship as `div` in `document` node
-    var playArea = document.createElement('div');
-    var ship = document.createElement('div');
+    var playArea = document.createElement('div'),
+        ship = document.createElement('div');
 
     var key = {
         right: false,

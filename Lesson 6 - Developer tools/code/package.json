@@ -1,0 +1,20 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Zadanie 6.1",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konradperzyna/Kurs_UL.git"
+  },
+  "author": "Konrad Perzyna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konradperzyna/Kurs_UL/issues"
+  },
+  "homepage": "https://github.com/konradperzyna/Kurs_UL#readme"
+}

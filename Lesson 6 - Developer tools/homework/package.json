@@ -1,0 +1,25 @@
+{
+
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "Homework for Lesson 6",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konradperzyna/Kurs_UL.git"
+  },
+  "author": "Konrad Perzyna",
+  "dependencies" : {
+    "gulp" : "3.x.x",
+    "gulp-concat" : "2.x.x",
+    "gulp-jshint" : "2.x.x"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konradperzyna/Kurs_UL/issues"
+  },
+  "homepage": "https://github.com/konradperzyna/Kurs_UL#readme"
+}

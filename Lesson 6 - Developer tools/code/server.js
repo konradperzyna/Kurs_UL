@@ -39,6 +39,11 @@ app.delete('/numbers', function (req, res) {
 // return result as strings
 app.get('/numbers/:op', function (req, res) {
     setTimeout(function () {
+        if (numbers.length === 0) {
+            res.send('0');
+            return;
+        }
+        
         switch(req.params.op) {
             case 'sum' : 
                 res.send(numbers.reduce((a, b) => a + b, 0).toString());

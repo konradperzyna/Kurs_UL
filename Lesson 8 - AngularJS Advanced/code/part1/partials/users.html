@@ -1,1 +1,12 @@
-Users list
+Users list: <br />
+<p>{{q.userName}}</p>
+<p ng-repeat="user in users | filter:q.userName"> {{user.firstName}} {{user.lastName}}</p>
+
+<form name="myForm">
+    <label>
+       User name:
+       <input type="search" type="text" ng-model="q.userName" required>
+       
+    </label>
+
+</form>
